@@ -23,10 +23,12 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.cloud:spring-cloud-stream-binder-rabbit'
 	implementation 'org.springframework.retry:spring-retry'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.cloud:spring-cloud-starter-config'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
 	testImplementation 'org.springframework.cloud:spring-cloud-stream-test-binder'
+
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
