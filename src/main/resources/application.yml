@@ -7,8 +7,9 @@ spring:
     import: "optional:configserver:"
   cloud:
     config:
+      enabled: false
       uri:
-        - http://host.docker.internal:8888
+      - http://host.docker.internal:8888
       request-connect-timeout: 5000
       request-read-timeout: 5000
       # fail-fast: true
@@ -32,4 +33,18 @@ spring:
     username: user
     password: password
     connection-timeout: 5s
+logging:
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+      probes:
+        enabled: true
 
