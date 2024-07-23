@@ -43,7 +43,7 @@ jobs:
           kubectl: 1.28.3
           kubeconform: 0.6.4
           command: |
-            kubeconform --strict k8s
+            kustomize build k8s | kubeconform --strict
   package:
     name: Package and Publish
     if: ${{ github.ref == 'refs/heads/main' }}
